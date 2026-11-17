@@ -23,7 +23,7 @@ main{padding:15px 10px 45px}h2{font-size:20px;margin-bottom:10px}h3{font-size:16
 </style><header><h1>GYM<span style="color:#e9b450">SESH</span></h1><small>Strength • endurance • mobility • progress</small></header><nav id="nav"></nav><main id="app"></main><script>
 const plan=[
 {name:'Strength & Muscle Mass',time:'75–85 min',ex:[['Barbell back squat','3 × 6–8'],['Bench press','3 × 6–10'],['Lat pulldown','3 × 8–12'],['Romanian deadlift','3 × 8–10'],['Seated cable row','2 × 10–12'],['Biceps curl','2 × 10–15'],['Triceps pushdown','2 × 10–15'],['Pallof press','2 × 10/side']]},
-{name:'Rotation, Mobility & Arm Health',time:'70–85 min',ex:[['Medicine ball rotational throw','3 × 5/side'],['Bulgarian split squat','3 × 8/leg'],['Landmine press','3 × 8–10/arm'],['Chest-supported row','3 × 10–12'],['Cable woodchop','3 × 10/side'],['Shoulder external rotation','2 × 12–15/arm'],['Forearm pronation/supination','2 × 12–15/arm'],['Wrist flexion','2 × 12–15/arm'],['Stationary bike','10–12 min']]},
+{name:'Rotation, Mobility & Arm Health',time:'70–85 min',ex:[['Rotary torso machine','3 × 10–12/side'],['Bulgarian split squat','3 × 8/leg'],['Dumbbell overhead press','3 × 8–10'],['Chest-supported row','3 × 10–12'],['Cable woodchop','3 × 10/side'],['Shoulder external rotation','2 × 12–15/arm'],['Forearm pronation/supination','2 × 12–15/arm'],['Wrist flexion','2 × 12–15/arm'],['Stationary bike','10–12 min']]},
 {name:'Hypertrophy & Athletic Endurance',time:'75–90 min',ex:[['Trap-bar deadlift','3 × 5–8'],['Incline dumbbell press','3 × 8–12'],['Leg press','3 × 10–12'],['Pull-up / pulldown','3 × 8–12'],['Lateral raise','2 × 12–15'],['Face pull','2 × 12–15'],['Hammer curl','2 × 10–12'],['Cable crunch','2 × 12–15'],['Side plank','2 × 30–45 sec/side'],['Cardio','8–10 min']]}];
 const KEY='gymsesh-data-v2',oldKey='gymsesh-data-v1';
 const seed=[['Chest press',85],['Leg curl',70],['Lat pulldown',110],['Seated cable row',110],['Triceps pushdown',35]];
@@ -43,7 +43,7 @@ function updateProgress(){const session=getSession(),done=plan[day].ex.filter((x
 function selectDay(n){day=n;render()}
 function switchView(v){view=v;render()}
 
-const iconKind=name=>/squat|split squat|leg press/i.test(name)?'squat':/deadlift|romanian/i.test(name)?'hinge':/bench|chest|incline|landmine press/i.test(name)?'press':/pulldown|pull-up|row/i.test(name)?'pull':/rotation|woodchop|pallof/i.test(name)?'rotate':/curl|wrist|pronation|supination/i.test(name)?'curl':/plank|crunch/i.test(name)?'core':/bike|cardio/i.test(name)?'cardio':'raise';
+const iconKind=name=>/squat|split squat|leg press/i.test(name)?'squat':/deadlift|romanian/i.test(name)?'hinge':/bench|chest|incline|landmine press|overhead press/i.test(name)?'press':/pulldown|pull-up|row/i.test(name)?'pull':/rotation|rotary torso|woodchop|pallof/i.test(name)?'rotate':/curl|wrist|pronation|supination/i.test(name)?'curl':/plank|crunch/i.test(name)?'core':/bike|cardio/i.test(name)?'cardio':'raise';
 function exerciseArt(name){const k=iconKind(name),paths={
 squat:'<path d="M21 26 L15 39 L24 45 L34 38 M21 26 L32 31 L40 25 M21 26 L27 18"/><path d="M11 45H45"/>',
 hinge:'<path d="M29 16 L37 29 L26 37 L21 46 M37 29 L45 45 M37 29 L47 35"/><path d="M13 45H48"/>',
